@@ -1,19 +1,21 @@
 package com.myproject.diningreviews.model;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 
-
+@Entity
+@Table(name = "dining_Reviews")
 @Getter
 @Setter
 @RequiredArgsConstructor
-@Entity
+
 public class DiningReview {
 
     @Id
@@ -30,3 +32,4 @@ public class DiningReview {
 
     private ReviewStatus status;
 }
+
