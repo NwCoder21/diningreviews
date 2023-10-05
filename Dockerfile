@@ -1,5 +1,4 @@
 # syntax=docker/dockerfile:1
-
 # Use the Eclipse Temurin base image with Java JDK
 FROM eclipse-temurin:17-jdk-jammy
 
@@ -16,5 +15,9 @@ RUN ./mvnw dependency:resolve
 # Copy the source code into the image
 COPY src ./src
 
+# Copy the H2_DB folder into the image
+COPY H2_DB ./H2_DB
+
 # Specify the command to run your Spring Boot application
 CMD ["./mvnw", "spring-boot:run"]
+
